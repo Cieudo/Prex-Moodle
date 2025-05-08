@@ -108,3 +108,57 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
+{{-- @extends('layouts.app')
+
+@section('content')
+<div class="container mt-4">
+    <h2 class="mb-4">Bem-vindo(a), {{ Auth::user()->name }}!</h2>
+
+    <!-- Destaques -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Cursos em andamento</h5>
+                    <p class="card-text display-6">3</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Novas mensagens</h5>
+                    <p class="card-text display-6">5</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Atividades pendentes</h5>
+                    <p class="card-text display-6">2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cursos -->
+    <h4 class="mb-3">Seus cursos</h4>
+    <div class="row">
+        @for($i = 1; $i <= 4; $i++)
+            <div class="col-md-3 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://source.unsplash.com/400x200/?education,{{ $i }}" class="card-img-top" alt="Curso">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Curso Exemplo {{ $i }}</h5>
+                        <p class="card-text">Descrição breve do curso. Aulas, avaliações e materiais.</p>
+                        <a href="#" class="btn btn-primary mt-auto">Acessar</a>
+                    </div>
+                </div>
+            </div>
+        @endfor
+    </div>
+</div>
+@endsection --}}
