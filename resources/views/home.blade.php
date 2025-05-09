@@ -22,7 +22,7 @@
             text-decoration: none;
         }
         .sidebar a:hover {
-            background-color: #0b5ed7;
+            background-color: #f8f9fa;
         }
     </style>
 </head>
@@ -30,12 +30,15 @@
     <div class="d-flex">
         <!-- Sidebar -->
         <div class="sidebar p-3 col-md-3 col-lg-2">
-            <h4 class="mb-4">PREX Moodle</h4>
+            <div class="d-flex align-items-center mb-4">
+                <img src="{{ asset('images/brasaouespi.png') }}" alt="Logo" class="img-fluid me-2" style="width: 50px;">
+                <h4 class="mb-0">PREX Moodle</h4>
+            </div>
             <ul class="nav flex-column">
                 <li class="nav-item mb-2"><a href="#" class="nav-link"><i class="bi bi-house-door"></i> Início</a></li>
                 <li class="nav-item mb-2"><a href="{{ route('professor.cursos.index') }}" class="nav-link"><i class="bi bi-book"></i> Meus Cursos</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link"><i class="bi bi-clipboard-check"></i> Atividades</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link"><i class="bi bi-person"></i> Perfil</a></li>
+                <li class="nav-item mb-2"><a href="{{ route('professor.perfil') }}" class="nav-link"><i class="bi bi-person"></i> Perfil</a></li>
                 <li class="nav-item mt-4">
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
@@ -44,6 +47,7 @@
                 </li>
             </ul>
         </div>
+        
 
         <!-- Conteúdo Principal -->
         <div class="container-fluid p-4">

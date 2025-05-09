@@ -40,4 +40,6 @@ Route::middleware(['auth'])->prefix('professor')->name('professor.')->group(func
     Route::resource('cursos', App\Http\Controllers\Professor\CursoController::class);
 });
 
+Route::middleware(['auth'])->get('/perfil', [App\Http\Controllers\Professor\CursoController::class, 'perfil'])->name('perfil');
+
 

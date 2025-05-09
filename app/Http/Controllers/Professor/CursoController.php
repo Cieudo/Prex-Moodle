@@ -18,6 +18,11 @@ class CursoController extends Controller
         return view('professor.cursos.index', compact('cursos'));
     }
     
+    function perfil()
+    {
+        $cursos = Curso::where('user_id', auth()->id())->get();
+        return view('professor.perfil', compact('cursos'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -98,4 +103,12 @@ class CursoController extends Controller
 
         return redirect()->route('professor.cursos.index')->with('success', 'Curso deletado com sucesso.');
     }
+
+    /**
+     *função para o perfil.
+     */
+
 }
+
+
+
