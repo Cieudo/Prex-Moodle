@@ -33,7 +33,7 @@
             <h4 class="mb-4">PREX Moodle</h4>
             <ul class="nav flex-column">
                 <li class="nav-item mb-2"><a href="#" class="nav-link"><i class="bi bi-house-door"></i> Início</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link"><i class="bi bi-book"></i> Meus Cursos</a></li>
+                <li class="nav-item mb-2"><a href="{{ route('professor.cursos.index') }}" class="nav-link"><i class="bi bi-book"></i> Meus Cursos</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link"><i class="bi bi-clipboard-check"></i> Atividades</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link"><i class="bi bi-person"></i> Perfil</a></li>
                 <li class="nav-item mt-4">

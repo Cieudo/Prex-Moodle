@@ -15,6 +15,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     })->name('admin.dashboard');
 });
 
+Route::resource('professor/cursos', App\Http\Controllers\Professor\CursoController::class)->names('professor.cursos');
+
+
 Route::middleware(['auth', 'role:professor'])->group(function () {
     Route::get('/professor/dashboard', function () {
         return view('dashboards.professor');

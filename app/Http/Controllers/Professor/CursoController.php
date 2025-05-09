@@ -14,7 +14,7 @@ class CursoController extends Controller
      */
     public function index()
     {
-        $cursos = Cursos::all();
+        $cursos = Curso::where('user_id', auth()->id())->get();
         return view('professor.cursos.index', compact('cursos'));
     }
     
@@ -33,22 +33,19 @@ class CursoController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|string|max:255',
-            'description' => 'required|string',
-            'start_date' => 'required|date',
-            'end_date' => 'required|date|after_or_equal:start_date',
+            'titulo' => 'required|string|max:255',
+            'descricao' => 'nullable|string',
         ]);
-
-        $curso = Curso::create([
+    
+        Curso::create([
             'user_id' => auth()->id(),
-            'title' => $request->title,
-            'description' => $request->description,
-            'start_date' => $request->start_date,
-            'end_date' => $request->end_date,
+            'titulo' => $request->titulo,
+            'descricao' => $request->descricao,
         ]);
-
-        return redirect()->route('professor.cursos.index')->with('success', 'Curso created successfully.');
+    
+        return redirect()->route('professor.cursos.index')->with('success', 'Curso criado com sucesso.');
     }
+    
     /**
      * Display the specified resource.
      */
@@ -99,6 +96,6 @@ class CursoController extends Controller
         $curso = Curso::findOrFail($id);
         $curso->delete();
 
-        return redirect()->route('professor.cursos.index')->with('success', 'Curso deleted successfully.');
+        return redirect()->route('professor.cursos.index')->with('success', 'Curso deletado com sucesso.');
     }
 }
